@@ -1,0 +1,64 @@
+{% extends "admin/base_site.html" %}
+{% load i18n static %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% static "admin/css/dashboard.css" %}">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+
+{% block content %}
+<h1>Reports</h1>
+<table>
+    <tbody>
+    <tr>
+        <td colspan="2">Users</td>
+
+    </tr>
+    <tr>
+        <td>Total Users</td>
+        <td id="totaluser"></td>
+    </tr><tr>
+        <td>Total Users today</td>
+        <td id="totalusertoday"></td>
+    </tr>
+
+    <tr>
+        <td>Total Users in Month</td>
+        <td id="totalusermonth"></td>
+    </tr>
+    <tr>
+        <td>Total Users in Year</td>
+        <td id="totaluseryear"></td>
+    </tr>
+    </tbody>
+</table>
+
+<table>
+    <tbody>
+    <tr>
+        <td colspan="2">API Requests</td>
+    </tr>
+    <tr>
+        <td>Total Api hits</td>
+        <td id="totalapi"></td>
+    </tr><tr>
+        <td>Total Apis today</td>
+        <td id="totalapitoday"></td>
+    </tr>
+
+    <tr>
+        <td>Total Api in Month</td>
+        <td id="totalapimonth"></td>
+    </tr>
+    <tr>
+        <td>Total Api in Year</td>
+        <td id="totalapiyear"></td>
+    </tr>
+    </tbody>
+</table>
+{% endblock %}
