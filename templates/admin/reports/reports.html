@@ -13,7 +13,7 @@
 
 {% block content %}
 <h1>Reports</h1>
-<table>
+<table width="500">
     <tbody>
     <tr>
         <td colspan="2">Users</td>
@@ -38,7 +38,7 @@
     </tbody>
 </table>
 
-<table>
+<table width="500">
     <tbody>
     <tr>
         <td colspan="2">API Requests</td>
@@ -61,4 +61,24 @@
     </tr>
     </tbody>
 </table>
+<script>
+$(document).ready(function(){
+      function Reports(){
+        $.ajax({url: "/api/v1/user/reports/", success: function(data){
+        request = data;
+            $("#totaluser").html(data.users.total);
+            $("#totalusertoday").html(data.users.user_today);
+            $("#totalusermonth").html(data.users.user_this_month);
+            $("#totaluseryear").html(data.users.user_this_year);
+            $("#totalapi").html(data.api.total_api);
+            $("#totalapitoday").html(data.api.total_api_day);
+            $("#totalapimonth").html(data.api.total_api_this_month);
+            $("#totalapiyear").html(data.api.total_api_this_year);
+
+        }});
+        }
+
+        Reports();
+  });
+</script>
 {% endblock %}

@@ -3,7 +3,7 @@
 {% block title %}{{ title }} | {{ site_title|default:_('Gituser admin') }}{% endblock %}
 
 {% block branding %}
-<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('GitUser administration') }}</a> &nbsp;<a href="/admin/reports" >Reports</a></h1>
+<h1 id="site-name"><a href="{% url 'admin:index' %}">{{ site_header|default:_('GitUser administration') }}</a> --- / -- &nbsp;<a href="/admin/reports" >Reports</a></h1>
 {% endblock %}
 
 
